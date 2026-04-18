@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mevn-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - mevn-net
+
+  backend:
+    build: ./backend
+    container_name: mevn-backend
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - MONGODB_URI=mongodb://mongo:27017/mevn_appointments
+    depends_on:
+      - mongo
+    networks:
+      - mevn-net
+
+  frontend:
+    build: ./frontend
+    container_name: mevn-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    networks:
+      - mevn-net
+
+volumes:
+  mongo-data:
+
+networks:
+  mevn-net:
+    driver: bridge
