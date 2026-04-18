@@ -1,3 +1,26 @@
+
+
+
+
+- ✅ Implementar paginación en el listado
+- ✅ Agregar filtros avanzados (rango de fechas)
+- ❌ Vista de calendario semanal/mensual
+- ❌ Tests unitarios (Jest/Vitest)
+- ✅ Dockerización del proyecto
+- ❌ Confirmación de citas por email (simulado)
+- ✅ Búsqueda en tiempo real (debounced)
+- ✅ Modo oscuro/claro
+
+
+
+
+
+
+
+
+
+
+
 # Prueba Técnica Fullstack - Sistema de Gestión de Citas
 
 ## Descripción General
